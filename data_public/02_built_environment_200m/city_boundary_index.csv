@@ -1,0 +1,3 @@
+﻿file,status
+grid_covariates_200m_public.csv.gz,non-restricted derived public covariates; restricted PA and ALAN fields excluded
+landuse_classification_200m.csv.gz,POI and built-environment derived functional context classes

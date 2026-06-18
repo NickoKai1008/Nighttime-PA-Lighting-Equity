@@ -1,0 +1,41 @@
+﻿column,release_status,notes
+grid_id,index_or_temporal,
+date,index_or_temporal,
+city,index_or_temporal,
+female_sum_day,restricted_synthetic_demo,Synthetic values are used for restricted activity and ALAN fields.
+female_sum_night,restricted_synthetic_demo,Synthetic values are used for restricted activity and ALAN fields.
+male_sum_day,restricted_synthetic_demo,Synthetic values are used for restricted activity and ALAN fields.
+male_sum_night,restricted_synthetic_demo,Synthetic values are used for restricted activity and ALAN fields.
+log_female_night,restricted_synthetic_demo,Synthetic values are used for restricted activity and ALAN fields.
+log_male_night,restricted_synthetic_demo,Synthetic values are used for restricted activity and ALAN fields.
+year,index_or_temporal,
+month,index_or_temporal,
+day,index_or_temporal,
+weekday,index_or_temporal,
+is_weekend,index_or_temporal,
+tavg_night,public_or_nonrestricted_covariate,
+prcp_night,public_or_nonrestricted_covariate,
+wspd_night,public_or_nonrestricted_covariate,
+pres_night,public_or_nonrestricted_covariate,
+rhum_night,public_or_nonrestricted_covariate,
+lon,public_or_nonrestricted_covariate,
+lat,public_or_nonrestricted_covariate,
+grid_area_m2,public_or_nonrestricted_covariate,
+Pop_Total,public_or_nonrestricted_covariate,
+Pop_Female_20_50,public_or_nonrestricted_covariate,
+Pop_Male_20_50,public_or_nonrestricted_covariate,
+NDVI,public_or_nonrestricted_covariate,
+walkability_global_z,public_or_nonrestricted_covariate,
+walkability_city_z,public_or_nonrestricted_covariate,
+NTL_mean_grid,restricted_synthetic_demo,Synthetic values are used for restricted activity and ALAN fields.
+gdp_2022,public_or_nonrestricted_covariate,
+built_density_2020,public_or_nonrestricted_covariate,
+ssx_choice_r5000,public_or_nonrestricted_covariate,
+ssx_has_segment,public_or_nonrestricted_covariate,
+Female_Employment_Rate_15plus_WorldBank,public_or_nonrestricted_covariate,
+Labour_force_participation_rate_F_Fig4,public_or_nonrestricted_covariate,
+SDG11_71pct,public_or_nonrestricted_covariate,
+SDG_3_1_Maternal_mortality_ratio,public_or_nonrestricted_covariate,
+SDG_3_7_Adolescent_birth_rate,public_or_nonrestricted_covariate,
+SDG_5_5_Share_of_seats_in_parliament,public_or_nonrestricted_covariate,
+SDG_4_4_Population_with_at_least_some_secondary_education_F,public_or_nonrestricted_covariate,

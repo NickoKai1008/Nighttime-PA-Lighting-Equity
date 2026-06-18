@@ -1,0 +1,10 @@
+name: nighttime-pa-lighting-equity-demo
+        channels:
+          - conda-forge
+        dependencies:
+          - python=3.11
+          - pandas
+          - numpy
+          - matplotlib
+          - openpyxl
+          - pyyaml

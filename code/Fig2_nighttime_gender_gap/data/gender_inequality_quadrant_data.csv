@@ -1,0 +1,26 @@
+﻿city,city_source,day_inequality,night_inequality,UNDP_GII,gii_group,region
+Bangkok,"Bangkok, TH",0.5478,0.5589,0.288,High GII,Southeast Asia
+Dubai,"Dubai, UAE",0.2919,0.498,0.04,Low GII,Middle East
+Hong Kong,Hong Kong,0.5822,0.5495,0.039,Low GII,East Asia
+Jakarta,"Jakarta, ID",0.5435,0.5862,0.423,High GII,Southeast Asia
+Sydney,"Sydney, AU",0.456,0.5002,0.056,Low GII,Pacific
+Mumbai,"Mumbai, IN",0.7116,0.7707,0.403,High GII,South/Central Asia
+Osaka,"Osaka, JP",0.7426,0.6508,0.059,Low GII,East Asia
+Riyadh,"Riyadh, KSA",0.6521,0.7373,0.228,Medium GII,Middle East
+Seoul,"Seoul, KR",0.6544,0.7136,0.038,Low GII,East Asia
+Shanghai,"Shanghai, CN",0.731,0.6245,0.132,Medium GII,East Asia
+Singapore,"Singapore, SG",0.55,0.616,0.031,Low GII,Southeast Asia
+Toshkent,"Toshkent, UZ",0.5634,0.633,0.291,High GII,South/Central Asia
+Auckland,"Auckland, NZ",0.4584,0.5004,0.082,Medium GII,Pacific
+Brisbane,"Brisbane, AU",0.4011,0.4506,0.056,Low GII,Pacific
+Melbourne,"Melbourne, AU",0.5944,0.6403,0.056,Low GII,Pacific
+Doha,"Doha, QA",0.4497,0.7132,0.195,Medium GII,Middle East
+Kuala Lumpur,"Kuala Lumpur, MY",0.5279,0.5964,0.172,Medium GII,Southeast Asia
+Bandar Seri Begawan,"Bandar Seri Begawan, BD",0.7147,0.7016,0.257,Medium GII,Southeast Asia
+Tehran,"Tehran, IR",0.5922,0.6607,0.482,High GII,Middle East
+Shenzhen,"Shenzhen, CN",0.7577,0.7826,0.132,Medium GII,East Asia
+Chengdu,"Chengdu, CN",0.7322,0.7905,0.132,Medium GII,East Asia
+Ho Chi Minh,"Ho Chi Minh, VN",0.5249,0.5283,0.299,High GII,Southeast Asia
+Ulaanbaatar,"Ulaanbaatar, MG",0.1438,0.4972,0.284,High GII,South/Central Asia
+Manila,"Manila, PP",0.7736,0.5478,0.351,High GII,Southeast Asia
+Dhaka,"Dhaka, BS",0.8981,0.8994,0.487,High GII,South/Central Asia

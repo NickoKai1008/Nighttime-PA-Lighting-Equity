@@ -1,0 +1,46 @@
+﻿display_city,action_unified,n
+Hong Kong,brighten_existing_female_gain,145
+Hong Kong,brighten_male_only_to_mixed,292
+Hong Kong,brighten_no_activity_to_female_enabled,1278
+Hong Kong,dim_noharm,937
+Hong Kong,unchanged,4411
+Dubai,brighten_existing_female_gain,33
+Dubai,brighten_male_only_to_mixed,412
+Dubai,brighten_no_activity_to_female_enabled,460
+Dubai,dim_noharm,1161
+Dubai,unchanged,6797
+Sydney,brighten_existing_female_gain,705
+Sydney,brighten_male_only_to_mixed,0
+Sydney,brighten_no_activity_to_female_enabled,0
+Sydney,dim_noharm,450
+Sydney,unchanged,26172
+Auckland,brighten_existing_female_gain,177
+Auckland,brighten_male_only_to_mixed,94
+Auckland,brighten_no_activity_to_female_enabled,88
+Auckland,dim_noharm,106
+Auckland,unchanged,11443
+Kuala Lumpur,brighten_existing_female_gain,63
+Kuala Lumpur,brighten_male_only_to_mixed,334
+Kuala Lumpur,brighten_no_activity_to_female_enabled,224
+Kuala Lumpur,dim_noharm,406
+Kuala Lumpur,unchanged,3820
+Doha,brighten_existing_female_gain,45
+Doha,brighten_male_only_to_mixed,220
+Doha,brighten_no_activity_to_female_enabled,86
+Doha,dim_noharm,325
+Doha,unchanged,987
+Bangkok,brighten_existing_female_gain,234
+Bangkok,brighten_male_only_to_mixed,165
+Bangkok,brighten_no_activity_to_female_enabled,470
+Bangkok,dim_noharm,1038
+Bangkok,unchanged,10117
+Tehran,brighten_existing_female_gain,24
+Tehran,brighten_male_only_to_mixed,59
+Tehran,brighten_no_activity_to_female_enabled,299
+Tehran,dim_noharm,632
+Tehran,unchanged,4078
+Dhaka,brighten_existing_female_gain,0
+Dhaka,brighten_male_only_to_mixed,56
+Dhaka,brighten_no_activity_to_female_enabled,40
+Dhaka,dim_noharm,82
+Dhaka,unchanged,3384

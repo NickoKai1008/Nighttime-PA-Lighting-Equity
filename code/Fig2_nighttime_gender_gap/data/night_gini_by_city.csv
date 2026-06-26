@@ -1,0 +1,26 @@
+﻿city,city_key,gii_group,region,night_female_gini,night_male_gini
+Singapore,singapore,Low,Southeast Asia,0.6848466954538452,0.5644343854026475
+Brisbane,brisbane,Low,Pacific,0.8074325038162089,0.6776588314493075
+Ho Chi Minh,ho_chi_minh,High,Southeast Asia,0.8168805741888863,0.6380712700536048
+Auckland,auckland,Medium,Pacific,0.844934750535248,0.6557822218756846
+Sydney,sydney,Low,Pacific,0.8531001559113859,0.6502188054253527
+Melbourne,melbourne,Low,Pacific,0.8572156058988235,0.6466269015351551
+Seoul,seoul,Low,East Asia,0.8651060330670309,0.6312157762192321
+Shanghai,shanghai,Medium,East Asia,0.8739538227570871,0.6206448288189846
+Jakarta,jakarta,High,Southeast Asia,0.8859797694103488,0.6263566197497195
+Hong Kong,hong_kong,Low,East Asia,0.8887622846644305,0.8140124625919973
+Tehran,tehran,High,Middle East,0.9032779422321726,0.6922331149978632
+Doha,doha,Medium,Middle East,0.9040363128310036,0.6466619230485475
+Kuala Lumpur,kuala_lumpur,Medium,Southeast Asia,0.9127118806511868,0.6613882342207322
+Bangkok,bangkok,High,Southeast Asia,0.9211290704723756,0.6492222723942347
+Dubai,dubai,Low,Middle East,0.9217760643738192,0.6529772847444161
+Manila,manila,High,Southeast Asia,0.9245053529318492,0.4869509445940322
+Chengdu,chengdu,Medium,East Asia,0.9462529923268684,0.509563981562885
+Osaka,osaka,Low,East Asia,0.959837326572282,0.5648115855563733
+Bandar Seri Begawan,bandar_seri_begawan,Medium,Southeast Asia,0.9683483849106616,0.6868880712672374
+Shenzhen,shenzhen,Medium,East Asia,0.9735747710275324,0.8270034886045811
+Riyadh,riyadh,Medium,Middle East,0.9880705894075232,0.6409228971967582
+Dhaka,dhaka,High,South & Central Asia,0.9891276694196104,0.5517288892447492
+Mumbai,mumbai,High,South & Central Asia,0.991689649489652,0.9002534166554415
+Ulaanbaatar,ulaanbaatar,High,South & Central Asia,0.9918427514498022,0.7312799510770065
+Tashkent,toshkent,High,South & Central Asia,0.9925966859140024,0.7454843087727653

@@ -1,0 +1,101 @@
+﻿outcome,term,estimate,ci_low,ci_high,p_value,group,label,y,row_order
+Female PA,ntl_mean_log_z,0.108111531428086,0.0937026237962482,0.122520439059923,7.596245843153669e-49,"NTL & Spatial
+Structure",* Nightlight Intensity (NTL),24,0
+Male PA,ntl_mean_log_z,0.107035951384529,0.0973177505986672,0.11675415217039,3.61519496757238e-103,"NTL & Spatial
+Structure",* Nightlight Intensity (NTL),24,0
+Female PA,ntl_alpha_z,0.120058780899554,-0.0218664346049795,0.261983996404088,0.0886190836785319,"NTL & Spatial
+Structure",NTL Spatial Decay (α),23,1
+Male PA,ntl_alpha_z,-0.0071708221058282,-0.176388078347204,0.162046434135547,0.928436264377379,"NTL & Spatial
+Structure",NTL Spatial Decay (α),23,1
+Female PA,ntl_D_z,-0.0018744249992527,-0.209769066845094,0.206020216846589,0.984275937456775,"NTL & Spatial
+Structure",NTL Spatial Extent (D),22,2
+Male PA,ntl_D_z,-0.0394250435740045,-0.28282279779157,0.203972710643561,0.73219936182888,"NTL & Spatial
+Structure",NTL Spatial Extent (D),22,2
+Female PA,ntl_c_z,0.0493674481051067,-0.0924838667170348,0.191218762927248,0.452921588356229,"NTL & Spatial
+Structure",NTL Core Brightness (c),21,3
+Male PA,ntl_c_z,-0.0354218231482308,-0.207324489392144,0.136480843095682,0.663388837804312,"NTL & Spatial
+Structure",NTL Core Brightness (c),21,3
+Female PA,ulpi_z,-0.158994529990635,-0.288375967464869,-0.0296130925164013,0.02092270499474,"NTL & Spatial
+Structure",Urban Light-Population Index,20,4
+Male PA,ulpi_z,-0.0203850225724414,-0.17085668675498,0.130086641610098,0.774732024837654,"NTL & Spatial
+Structure",Urban Light-Population Index,20,4
+Female PA,walkability_global_z,0.194609628354611,0.181509153751841,0.207710102957381,9.50186316290452e-185,"Built
+Environment",Walkability Index,19,5
+Male PA,walkability_global_z,0.260828790460684,0.251820016952574,0.269837563968795,0.0,"Built
+Environment",Walkability Index,19,5
+Female PA,ssx_choice_r5000_z,0.143489193682977,0.131291756642874,0.155686630723081,5.5973738425488604e-117,"Built
+Environment",Street Connectivity (SSX),18,6
+Male PA,ssx_choice_r5000_z,0.259715444246203,0.250822174637394,0.268608713855012,0.0,"Built
+Environment",Street Connectivity (SSX),18,6
+Female PA,NDVI_mean_z,-0.110066800007392,-0.12975226186618,-0.0903813381486045,6.57451090888558e-28,"Built
+Environment",Vegetation Cover (NDVI),17,7
+Male PA,NDVI_mean_z,-0.15379683004655,-0.167086927164425,-0.140506732928675,1.1727456405079601e-113,"Built
+Environment",Vegetation Cover (NDVI),17,7
+Female PA,built_density_2020_z,0.0244386820827682,0.0067124221761588,0.0421649419893776,0.0068904418880235,"Built
+Environment",Building Density,16,8
+Male PA,built_density_2020_z,-0.0026751609662307,-0.0141422707431054,0.0087919488106438,0.647496406620408,"Built
+Environment",Building Density,16,8
+Female PA,Pop_Female_20_50_z,-0.251205813173518,-0.270303006611452,-0.232108619735584,1.59054349613615e-145,"Population and
+Demographic",Female Population (20–50 yrs),15,9
+Male PA,Pop_Female_20_50_z,-0.34402072137912,-0.357966275127347,-0.330075167630893,0.0,"Population and
+Demographic",Female Population (20–50 yrs),15,9
+Female PA,ppl35prop_z,0.165905750506869,0.156624152580859,0.175187348432879,2.54238318672164e-268,"Population and
+Demographic",Post-Childbearing Age (35+ Prop.),14,10
+Male PA,ppl35prop_z,0.127287245698994,0.124497700865706,0.130076790532282,0.0,"Population and
+Demographic",Post-Childbearing Age (35+ Prop.),14,10
+Female PA,gdp_2022_z,0.0564172500199077,0.0414948063566662,0.0713396936831492,1.28301122019959e-13,"Socioeconomic
+conditions",GDP per Grid Cell,13,11
+Male PA,gdp_2022_z,0.0464927099730456,0.0349343624384993,0.0580510575075919,3.1995128140605602e-15,"Socioeconomic
+conditions",GDP per Grid Cell,13,11
+Female PA,Safety_Walk_Night_z,-0.263817005348318,-0.405247475399723,-0.122386535296912,0.0019983039210402,"Gender related
+urban well-being",Safety: Walking at Night,12,12
+Male PA,Safety_Walk_Night_z,-0.263247236275172,-0.432641338719899,-0.0938531338304449,0.0051587644277852,"Gender related
+urban well-being",Safety: Walking at Night,12,12
+Female PA,Female_Employment_Rate_15plus_z,0.351402066300071,0.151525487422637,0.551278645177505,0.0027291876362715,"Gender related
+urban well-being",Female Employment Rate (15+),11,13
+Male PA,Female_Employment_Rate_15plus_z,0.249613941994061,0.0187325230422893,0.480495360945834,0.0361545743635564,"Gender related
+urban well-being",Female Employment Rate (15+),11,13
+Female PA,SDG_3_1_Maternal_mortality_ratio_z,-0.0491072418143423,-0.244324750640478,0.146110267011794,0.580139538626146,"Gender related
+urban well-being",SDG 3.1  Maternal Mortality,10,14
+Male PA,SDG_3_1_Maternal_mortality_ratio_z,-0.0026357398381787,-0.241652034862159,0.236380555185802,0.981335547627618,"Gender related
+urban well-being",SDG 3.1  Maternal Mortality,10,14
+Female PA,SDG_3_7_Adolescent_birth_rate_z,0.345400568569265,0.152584678111605,0.538216459026925,0.0016055632409118,"Gender related
+urban well-being",SDG 3.7  Adolescent Birth Rate,9,15
+Male PA,SDG_3_7_Adolescent_birth_rate_z,0.0747479259713201,-0.138834431082794,0.288330283025435,0.463032762779761,"Gender related
+urban well-being",SDG 3.7  Adolescent Birth Rate,9,15
+Female PA,SDG_4_4_Education_F_z,0.0573096470253347,-0.134006764301021,0.24862605835169,0.533879137578519,"Gender related
+urban well-being",SDG 4.4  Female Education,8,16
+Male PA,SDG_4_4_Education_F_z,-0.148289568109398,-0.336686636452094,0.0401075002332985,0.113641612110913,"Gender related
+urban well-being",SDG 4.4  Female Education,8,16
+Female PA,SDG_5_5_Share_of_seats_in_parliament_z,-0.127669729207837,-0.294075706980874,0.0387362485651997,0.117014061199492,"Gender related
+urban well-being",SDG 5.5  Women in Parliament,7,17
+Male PA,SDG_5_5_Share_of_seats_in_parliament_z,0.0199487503036664,-0.178393707749635,0.218291208356968,0.831412935163215,"Gender related
+urban well-being",SDG 5.5  Women in Parliament,7,17
+Female PA,SDG11_71pct_z,0.274033602808173,0.109590199465485,0.438477006150861,0.0038847067716002,"Gender related
+urban well-being",SDG 11.7.1  Public Open Space,6,18
+Male PA,SDG11_71pct_z,0.293944887302931,0.107054051255498,0.480835723350364,0.0046975348074273,"Gender related
+urban well-being",SDG 11.7.1  Public Open Space,6,18
+Female PA,tavg_night_z,0.141751669454435,0.129819249094004,0.153684089814866,1.1552770575703899e-119,"Climate &
+temporal effects",Night Temperature,5,19
+Male PA,tavg_night_z,0.135252097549234,0.129889520244292,0.140614674854177,0.0,"Climate &
+temporal effects",Night Temperature,5,19
+Female PA,prcp_night_z,0.0200339694025438,0.0151815261105006,0.024886412694587,5.89330870547194e-16,"Climate &
+temporal effects",Night Precipitation,4,20
+Male PA,prcp_night_z,0.0178839716048195,0.0157259111926397,0.0200420320169994,2.57396281157488e-59,"Climate &
+temporal effects",Night Precipitation,4,20
+Female PA,wspd_night_z,-0.0455590974389639,-0.0539262693508891,-0.0371919255270388,1.3936561492400002e-26,"Climate &
+temporal effects",Night Wind Speed,3,21
+Male PA,wspd_night_z,-0.0472462362283709,-0.0510034745673606,-0.0434889978893812,4.44299175336508e-134,"Climate &
+temporal effects",Night Wind Speed,3,21
+Female PA,pres_night_z,0.0048792187631011,-0.0010333692813287,0.010791806807531,0.105788891593162,"Climate &
+temporal effects",Night Pressure,2,22
+Male PA,pres_night_z,-0.0008340124677439,-0.0034571248684281,0.0017890999329401,0.533175112350101,"Climate &
+temporal effects",Night Pressure,2,22
+Female PA,rhum_night_z,-0.0416696100609117,-0.0484377215371414,-0.0349014985846819,1.6110574399606e-33,"Climate &
+temporal effects",Night Humidity,1,23
+Male PA,rhum_night_z,-0.0576379626301821,-0.0607234951689549,-0.0545524300914093,2.83120767992466e-293,"Climate &
+temporal effects",Night Humidity,1,23
+Female PA,is_weekend,-0.157591988672545,-0.166889043265655,-0.148294934079435,1.57721940105602e-241,"Climate &
+temporal effects",Weekend Effect,0,24
+Male PA,is_weekend,-0.0914853866658108,-0.0958312112178997,-0.0871395621137219,0.0,"Climate &
+temporal effects",Weekend Effect,0,24

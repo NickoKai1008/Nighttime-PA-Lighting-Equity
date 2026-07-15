@@ -1,4 +1,4 @@
-# S1 gender inequality quadrant figure
+# Gender inequality quadrant figure
 
 This folder is a minimal reproducible package for `Fig2_nighttime_gender_gap`.
 

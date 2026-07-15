@@ -54,6 +54,73 @@ REGION_MARKERS = {
     "Middle East": "D",
 }
 
+
+def _overlap_area(a, b) -> float:
+    width = max(0.0, min(a.x1, b.x1) - max(a.x0, b.x0))
+    height = max(0.0, min(a.y1, b.y1) - max(a.y0, b.y0))
+    return width * height
+
+
+def annotate_cities(ax, data: pd.DataFrame, xcol: str, ycol: str, obstacles=()) -> None:
+    fig = ax.figure
+    fig.canvas.draw()
+    renderer = fig.canvas.get_renderer()
+    axes_box = ax.get_window_extent(renderer)
+    blocked = [artist.get_window_extent(renderer) for artist in obstacles]
+
+    radii = [6, 10, 14, 19, 25, 32, 40]
+    angles = np.deg2rad([35, -35, 145, -145, 0, 90, -90, 180])
+    candidates = [(r * np.cos(a), r * np.sin(a)) for r in radii for a in angles]
+
+    points = ax.transData.transform(data[[xcol, ycol]].to_numpy(dtype=float))
+    scale = np.maximum(np.ptp(points, axis=0), 1.0)
+    normalized = points / scale
+    distance = np.sqrt(((normalized[:, None, :] - normalized[None, :, :]) ** 2).sum(axis=2))
+    crowding = (distance < 0.12).sum(axis=1)
+    order = sorted(range(len(data)), key=lambda i: (crowding[i], len(city_display(data.iloc[i]["city"]))), reverse=True)
+    point_boxes = [plt.matplotlib.transforms.Bbox.from_bounds(px - 3, py - 3, 6, 6) for px, py in points]
+    placed = []
+
+    for i in order:
+        row = data.iloc[i]
+        label = city_display(row["city"])
+        best = None
+        for dx, dy in candidates:
+            ha = "left" if dx > 1 else "right" if dx < -1 else "center"
+            va = "bottom" if dy > 1 else "top" if dy < -1 else "center"
+            trial = ax.annotate(
+                label,
+                xy=(row[xcol], row[ycol]),
+                xytext=(dx, dy),
+                textcoords="offset points",
+                fontsize=5.8,
+                ha=ha,
+                va=va,
+            )
+            box = trial.get_window_extent(renderer).expanded(1.05, 1.12)
+            trial.remove()
+            outside = box.width * box.height - _overlap_area(box, axes_box)
+            label_overlap = sum(_overlap_area(box, other) for other in placed + blocked)
+            point_overlap = sum(_overlap_area(box, other) for j, other in enumerate(point_boxes) if j != i)
+            score = 1000.0 * (outside + label_overlap) + 20.0 * point_overlap + dx * dx + dy * dy
+            if best is None or score < best[0]:
+                best = (score, dx, dy, ha, va, box)
+
+        _, dx, dy, ha, va, box = best
+        ax.annotate(
+            label,
+            xy=(row[xcol], row[ycol]),
+            xytext=(dx, dy),
+            textcoords="offset points",
+            fontsize=5.8,
+            color=TEXT,
+            ha=ha,
+            va=va,
+            zorder=5,
+            arrowprops={"arrowstyle": "-", "color": "#888888", "lw": 0.35, "alpha": 0.55, "shrinkA": 1.5, "shrinkB": 3.0},
+        )
+        placed.append(box)
+
 CATEGORY_STYLE = {
     "both_zero": ("No female or male PA", EMPTY, 0.48, 1),
     "both_active": ("Gender-mixed PA", MIXED, 0.90, 2),
@@ -223,9 +290,6 @@ def plot_footprint_share_scatter(scatter: pd.DataFrame) -> None:
                 continue
             ax.scatter(sub[xcol], sub[ycol], s=50, marker=marker, color=color, alpha=0.94, edgecolor="white", linewidth=0.65, zorder=4)
 
-    for _, row in d.iterrows():
-        ax.annotate(city_display(row["city"]), xy=(row[xcol], row[ycol]), xytext=(5, 4), textcoords="offset points", fontsize=5.8, color=TEXT, zorder=5)
-
     ax.set_xlim(0, lim_max)
     ax.set_ylim(0, lim_max)
     ticks = np.arange(0, lim_max + 0.1, 10.0)
@@ -253,9 +317,10 @@ def plot_footprint_share_scatter(scatter: pd.DataFrame) -> None:
     diag_handle = Line2D([0], [0], color="#8A8A8A", lw=1.1, ls=(0, (4, 3)), label="Daytime = nighttime")
     leg1 = ax.legend(handles=group_handles, title="UNDP GII", loc="lower right", bbox_to_anchor=(0.995, 0.18), fontsize=6.5, title_fontsize=6.8, ncol=3, handletextpad=0.3, columnspacing=0.55)
     ax.add_artist(leg1)
-    ax.legend(handles=region_handles + [fit_handle, band_handle, diag_handle], title="Geographic region", loc="upper left", bbox_to_anchor=(0.02, 0.985), fontsize=6.3, title_fontsize=6.7, handletextpad=0.45, labelspacing=0.35)
+    leg2 = ax.legend(handles=region_handles + [fit_handle, band_handle, diag_handle], title="Geographic region", loc="upper left", bbox_to_anchor=(0.02, 0.985), fontsize=6.3, title_fontsize=6.7, handletextpad=0.45, labelspacing=0.35)
 
     fig.tight_layout()
+    annotate_cities(ax, d.reset_index(drop=True), xcol, ycol, obstacles=[leg1, leg2])
     stem = "scatter_daytime_vs_nighttime_female_footprint_share_25cities_fig1b_style"
     for ext in ["png", "svg"]:
         fig.savefig(FIG_DIR / f"{stem}.{ext}", dpi=520 if ext == "png" else None, bbox_inches="tight", facecolor="white")
@@ -292,3 +357,4 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
+

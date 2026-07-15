@@ -29,35 +29,6 @@ MARKERS = {
     "Middle East": "D",
 }
 
-LABEL_OFFSETS = {
-    "Dubai": (8, 8),
-    "Dhaka": (8, 8),
-    "Doha": (8, 8),
-    "Ulaanbaatar": (8, -4),
-    "Brisbane": (8, -10),
-    "Auckland": (8, -2),
-    "Sydney": (8, -2),
-    "Hong Kong": (8, -13),
-    "Ho Chi Minh": (8, -6),
-    "Bangkok": (8, -5),
-    "Kuala Lumpur": (8, -8),
-    "Singapore": (8, 10),
-    "Toshkent": (8, 10),
-    "Melbourne": (8, 8),
-    "Seoul": (8, -7),
-    "Riyadh": (8, 6),
-    "Mumbai": (8, -6),
-    "Chengdu": (8, 8),
-    "Shenzhen": (8, -4),
-    "Shanghai": (8, -10),
-    "Bandar Seri Begawan": (8, -12),
-    "Osaka": (8, -12),
-    "Manila": (8, -3),
-    "Jakarta": (8, -5),
-    "Tehran": (8, -8),
-}
-
-
 def apply_style() -> None:
     plt.rcParams.update(
         {
@@ -71,6 +42,71 @@ def apply_style() -> None:
             "legend.frameon": False,
         }
     )
+
+
+def _overlap_area(a, b) -> float:
+    width = max(0.0, min(a.x1, b.x1) - max(a.x0, b.x0))
+    height = max(0.0, min(a.y1, b.y1) - max(a.y0, b.y0))
+    return width * height
+
+
+def annotate_cities(ax, data: pd.DataFrame, x_col: str, y_col: str) -> None:
+    fig = ax.figure
+    fig.canvas.draw()
+    renderer = fig.canvas.get_renderer()
+    axes_box = ax.get_window_extent(renderer)
+    radii = [7, 11, 16, 22, 29, 37, 46]
+    angles = np.deg2rad([30, -30, 150, -150, 0, 90, -90, 180])
+    candidates = [(r * np.cos(a), r * np.sin(a)) for r in radii for a in angles]
+
+    points = ax.transData.transform(data[[x_col, y_col]].to_numpy(dtype=float))
+    scale = np.maximum(np.ptp(points, axis=0), 1.0)
+    normalized = points / scale
+    distance = np.sqrt(((normalized[:, None, :] - normalized[None, :, :]) ** 2).sum(axis=2))
+    crowding = (distance < 0.13).sum(axis=1)
+    order = sorted(range(len(data)), key=lambda i: (crowding[i], len(str(data.iloc[i]["city"]))), reverse=True)
+    point_boxes = [plt.matplotlib.transforms.Bbox.from_bounds(px - 4, py - 4, 8, 8) for px, py in points]
+    placed = []
+
+    for i in order:
+        row = data.iloc[i]
+        label = str(row["city"])
+        best = None
+        for dx, dy in candidates:
+            ha = "left" if dx > 1 else "right" if dx < -1 else "center"
+            va = "bottom" if dy > 1 else "top" if dy < -1 else "center"
+            trial = ax.annotate(
+                label,
+                xy=(row[x_col], row[y_col]),
+                xytext=(dx, dy),
+                textcoords="offset points",
+                fontsize=7.0,
+                ha=ha,
+                va=va,
+            )
+            box = trial.get_window_extent(renderer).expanded(1.05, 1.12)
+            trial.remove()
+            outside = box.width * box.height - _overlap_area(box, axes_box)
+            label_overlap = sum(_overlap_area(box, other) for other in placed)
+            point_overlap = sum(_overlap_area(box, other) for j, other in enumerate(point_boxes) if j != i)
+            score = 1000.0 * (outside + label_overlap) + 20.0 * point_overlap + dx * dx + dy * dy
+            if best is None or score < best[0]:
+                best = (score, dx, dy, ha, va, box)
+
+        _, dx, dy, ha, va, box = best
+        ax.annotate(
+            label,
+            xy=(row[x_col], row[y_col]),
+            xytext=(dx, dy),
+            textcoords="offset points",
+            fontsize=7.0,
+            color="#222222",
+            ha=ha,
+            va=va,
+            zorder=4,
+            arrowprops={"arrowstyle": "-", "color": "#888888", "lw": 0.4, "alpha": 0.58, "shrinkA": 1.5, "shrinkB": 3.5},
+        )
+        placed.append(box)
 
 
 def regression_ci(x: np.ndarray, y: np.ndarray, xx: np.ndarray) -> tuple[np.ndarray, np.ndarray, np.ndarray, float, float, float]:
@@ -101,8 +137,9 @@ def draw_quadrant(
     x_med = float(np.median(x))
     y_med = float(np.median(y))
 
-    fig, ax = plt.subplots(figsize=(7.9, 6.4))
-    axis_min, axis_max = 0.20, 1.00
+    fig, ax = plt.subplots(figsize=(8.15, 6.55))
+    axis_min = max(0.0, np.floor(min(float(x.min()), float(y.min())) * 10.0) / 10.0)
+    axis_max = 1.00
 
     xx = np.linspace(axis_min, axis_max, 220)
     if night_greater_region == "above":
@@ -135,24 +172,10 @@ def draw_quadrant(
                 zorder=3,
             )
 
-    for _, row in df.iterrows():
-        dx, dy = LABEL_OFFSETS.get(row["city"], (7, 6))
-        ax.annotate(
-            row["city"],
-            xy=(row[x_col], row[y_col]),
-            xytext=(dx, dy),
-            textcoords="offset points",
-            fontsize=8.1,
-            color="#222222",
-            ha="left",
-            va="center",
-            zorder=4,
-        )
-
     ax.set_xlim(axis_min, axis_max)
     ax.set_ylim(axis_min, axis_max)
     ax.set_aspect("equal", adjustable="box")
-    ticks = np.arange(0.2, 1.01, 0.2)
+    ticks = np.arange(axis_min, 1.01, 0.1 if axis_min < 0.2 else 0.2)
     ax.set_xticks(ticks)
     ax.set_yticks(ticks)
     ax.set_xlabel(x_label, fontsize=12.5, fontweight="bold")
@@ -182,6 +205,7 @@ def draw_quadrant(
     ax.add_artist(leg2)
 
     fig.tight_layout()
+    annotate_cities(ax, df.reset_index(drop=True), x_col, y_col)
     for ext in ["png", "svg"]:
         fig.savefig(FIG_DIR / f"{stem}.{ext}", dpi=450 if ext == "png" else None, bbox_inches="tight", facecolor="white")
     plt.close(fig)

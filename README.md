@@ -33,7 +33,7 @@ conda activate nighttime-pa-lighting-equity-demo
 Installation typically takes 2-5 minutes on a standard desktop with Conda
 already installed.
 
-## Reproducing the figures
+## Reproducing the results and figures
 
 Run the release-safe workflow from the repository root `Figure_code/` 
 The workflow uses the supplied aggregate tables to reproduce the public

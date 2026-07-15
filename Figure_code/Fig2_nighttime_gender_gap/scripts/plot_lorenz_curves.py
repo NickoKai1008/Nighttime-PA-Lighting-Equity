@@ -98,8 +98,8 @@ def plot_lorenz(curves, outcome, stem, ylabel):
         color = group_gradient_color(group, meta["gini"], ranges[group]["min"], ranges[group]["max"])
         label = f"{meta['city']} ({meta['gini']:.3f}) [{group[0]}]"
         ax_main.plot(
-            city_curve["population_fraction"],
-            city_curve["activity_fraction"],
+            city_curve["population_fraction"].to_numpy(),
+            city_curve["activity_fraction"].to_numpy(),
             color=color,
             lw=1.35,
             alpha=0.88,
@@ -107,8 +107,8 @@ def plot_lorenz(curves, outcome, stem, ylabel):
             zorder=2,
         )
         ax_zoom.plot(
-            city_curve["population_fraction"],
-            city_curve["activity_fraction"],
+            city_curve["population_fraction"].to_numpy(),
+            city_curve["activity_fraction"].to_numpy(),
             color=color,
             lw=1.5,
             alpha=0.88,

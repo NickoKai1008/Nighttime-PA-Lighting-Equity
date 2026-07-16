@@ -43,7 +43,5 @@ and are therefore not part of the one-command public demo.
 
 ## Using other data
 
-Authorized users can prepare a grid-day CSV using the columns and units listed
-in `data_demo/restricted_model_input_schema.csv`, then point the corresponding
-analysis script to that file. Restricted Strava and SDGSAT-1 data are not
+Restricted Strava and SDGSAT-1 data are not
 included in this repository.

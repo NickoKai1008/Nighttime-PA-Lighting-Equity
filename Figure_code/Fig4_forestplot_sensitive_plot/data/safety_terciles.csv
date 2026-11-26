@@ -1,0 +1,9 @@
+scope,contrast,ratio,lo,hi
+recreational,female low/high,0.43,0.18,1.4
+recreational,male low/high,0.83,0.39,1.73
+commercial,female low/high,0.6,0.19,2.16
+commercial,male low/high,0.81,0.32,1.83
+residential,female low/high,0.45,0.26,0.77
+residential,male low/high,0.66,0.41,0.92
+all25,female low/high,0.48,0.28,1.03
+all25,male low/high,0.56,0.35,1.03

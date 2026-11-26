@@ -1,0 +1,17 @@
+scope,period,sex,reldiff_pp_vs_sub,reldiff_pp2_vs_sub
+recreational,night,female,0.014,0.017
+recreational,night,male,0.001,0.03
+recreational,day,female,0.001,0.036
+recreational,day,male,0.009,0.048
+commercial,night,female,0.039,0.027
+commercial,night,male,0.032,0.021
+commercial,day,female,0.042,0.033
+commercial,day,male,0.031,0.025
+residential,night,female,0.003,0.022
+residential,night,male,0.003,0.026
+residential,day,female,0.002,0.025
+residential,day,male,0.007,0.031
+all25,night,female,0.012,0.008
+all25,night,male,0.004,0.017
+all25,day,female,0.011,0.011
+all25,day,male,0.001,0.02

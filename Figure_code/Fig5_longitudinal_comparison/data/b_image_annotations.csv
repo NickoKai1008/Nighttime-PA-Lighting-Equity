@@ -1,0 +1,4 @@
+event_id,period,x1,y1,x2,y2,role
+E16,pre,0.0,255.0,640.0,655.0,context
+E16,post,70.0,275.0,255.0,585.0,project_deployment
+E16,post,450.0,325.0,600.0,640.0,project_deployment

@@ -1,0 +1,9 @@
+scope,sex,night_over_day_gain_ratio,lo,hi
+recreational,female,3.99,2.65,6.3
+recreational,male,3.0,2.33,3.73
+commercial,female,1.19,0.72,2.11
+commercial,male,1.27,0.87,1.86
+residential,female,1.88,1.39,2.53
+residential,male,1.56,1.32,1.84
+all25,female,1.76,1.36,2.38
+all25,male,1.8,1.55,2.17
